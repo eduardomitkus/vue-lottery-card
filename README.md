@@ -1,18 +1,8 @@
 # vue-lottery-card
 
-## Project setup
+## Start application
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+./start.sh
 ```
 
 ### Run your unit tests
