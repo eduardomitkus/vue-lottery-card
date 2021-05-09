@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+  my-app:
+    container_name: vue-lottery-card
+    build:
+      context: ../.
+      dockerfile: docker/Dockerfile
+    volumes:
+      - '../.:/app'
+      - '/app/node_modules'
+    ports:
+      - '8081:8080'
