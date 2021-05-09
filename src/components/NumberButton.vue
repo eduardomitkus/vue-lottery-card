@@ -1,17 +1,26 @@
 <template> 
   <div>
     <div class="col s1">
-      <a class="left waves-effect waves-light btn size grey lighten-5 grey-text text-darken-2">{{ number }}</a>
+      <button class="left waves-effect waves-light btn size lighten-5 text-darken-2"
+        :class="{ grey: !isSelected, 'grey-text': !isSelected }"
+        @click="isSelected = !isSelected"
+      >
+        {{ number }}
+      </button>
     </div>
   </div>
-  
 </template>
 
 <script>
 export default {
   name: 'NumberButton',
   props: {
-    number: Number
+    number: Number,
+  },
+  data() {
+    return {
+      isSelected: false,
+    }
   }
 }
 </script>
@@ -22,8 +31,7 @@ export default {
   }
 
   .row .col.s1 {
-    width: 9.3333333333%;
+    /* width: 10%; */
     margin-bottom: 4px;
   }
-  
 </style>
