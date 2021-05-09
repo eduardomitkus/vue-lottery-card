@@ -1,0 +1,11 @@
+FROM node:14.16.1-alpine
+
+WORKDIR /app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install @vue/cli@4.5.13 -g
+
+CMD ["npm", "run", "serve"]
