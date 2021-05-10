@@ -1,7 +1,7 @@
 <template> 
   <div>
     <div class="col s1">
-      <button class="left waves-effect waves-light btn size lighten-5 text-darken-2"
+      <button class="left waves-effect waves-light btn size lighten-5 text-darken-2 number-button"
         :class="{ grey: !isSelected, 'grey-text': !isSelected }"
         @click="isSelected = !isSelected"
       >
