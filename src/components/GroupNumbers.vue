@@ -4,7 +4,6 @@
         <div v-for="number in totalNumbers" :key="number">
           <number-button :number="number"/>
         </div>
-
       </div>
   </div>
 </template>

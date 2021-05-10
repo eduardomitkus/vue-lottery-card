@@ -30,8 +30,10 @@ export default {
     width: 45px;
   }
 
+  .col.s1 {
+    margin-bottom: 12px;
+  }
   .row .col.s1 {
-    /* width: 10%; */
-    margin-bottom: 4px;
+    width: 10%;
   }
 </style>
