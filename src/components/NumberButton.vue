@@ -3,7 +3,7 @@
     <div class="col s1">
       <button class="left waves-effect waves-light btn size lighten-5 text-darken-2 number-button"
         :class="{ grey: !isSelected, 'grey-text': !isSelected }"
-        @click="isSelected = !isSelected"
+        @click="clickNumber"
       >
         {{ number }}
       </button>
@@ -20,6 +20,12 @@ export default {
   data() {
     return {
       isSelected: false,
+    }
+  },
+  methods: {
+    clickNumber() {
+      this.isSelected = ! this.isSelected
+      this.$emit('isSelected', this.isSelected)
     }
   }
 }
