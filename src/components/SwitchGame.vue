@@ -4,7 +4,7 @@
       <div class="center row">
         <label class="sena-check">
           <input id="sena" name="type" type="radio" :value="games.sena.value" v-model="typeSelected" />
-          <span>{{games.sena.label}}</span>
+          <span>{{ games.sena.label }}</span>
         </label>
         <label>
           <input id="quina" name="type" type="radio" :value="games.quina.value" v-model="typeSelected" />
