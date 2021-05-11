@@ -26,5 +26,4 @@ describe('NumberButton.vue', () => {
 
     expect(numberButtonWrapper.vm.isSelected).toBeFalsy()
   })
-
 })
