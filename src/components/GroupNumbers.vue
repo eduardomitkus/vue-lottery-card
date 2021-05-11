@@ -41,7 +41,7 @@ export default {
       return this.addNumber(number)
     },
     addNumber(number) {
-      this.$store.state.numbersSelecteds.push(number)
+      this.$store.commit('addNumbers', number)
     },
     removeNumber(number) {
       if(this.$store.state.numbersSelecteds.includes(number)) {
