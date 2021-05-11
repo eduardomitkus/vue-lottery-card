@@ -3,12 +3,12 @@
     <form>
       <div class="center row">
         <label class="sena-check">
-          <input name="type" type="radio" :value="typesValues.sena.value" v-model="typeSelected" />
-          <span>{{ typesValues.sena.label }}</span>
+          <input name="type" type="radio" :value="games.sena.value" v-model="typeSelected" />
+          <span>{{games.sena.label}}</span>
         </label>
         <label>
-          <input name="type" type="radio" :value="typesValues.quina.value" v-model="typeSelected" />
-          <span>{{ typesValues.quina.label }}</span>
+          <input name="type" type="radio" :value="games.quina.value" v-model="typeSelected" />
+          <span>{{ games.quina.label }}</span>
         </label>
       </div>
     </form>  
@@ -16,15 +16,14 @@
 </template>
 
 <script>
+import GamesTypes from '../types/Games'
+
 export default {
   name: 'SwitchGame',
   data() {
     return {
       typeSelected: '',
-      typesValues: {
-        sena: { value: 'sena', label: 'Sena'},
-        quina: { value: 'quina', label: 'Quina'},
-      }
+      games: {},
     }
   },
   watch: {
@@ -33,8 +32,9 @@ export default {
     }
   },
   created() {
-    this.typeSelected = this.typesValues.sena.value
-  }
+    this.games = GamesTypes
+    this.typeSelected = this.games.sena.value
+  },
 }
 </script>
 

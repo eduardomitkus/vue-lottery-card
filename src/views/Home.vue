@@ -1,28 +1,28 @@
 <template>
   <div class="container">
     <switch-game @select="game" />
-    <lottery-card>
-      <group-numbers />
-    </lottery-card>  
+    <lottery-card :type="typeGame" />
   </div>
-  
 </template>
 
 <script>
-import GroupNumbers from '../components/GroupNumbers'
 import LotteryCard from '../components/LotteryCard'
 import SwitchGame from '../components/SwitchGame'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      typeGame: ''
+    }
+  },
   components: {
     LotteryCard,
-    GroupNumbers,
     SwitchGame
   },
   methods: {
     game(game) {
-      console.log(game)
+      this.typeGame = game
     }
   }
 }
