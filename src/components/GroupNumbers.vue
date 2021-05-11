@@ -50,7 +50,9 @@ export default {
     removeNumber(number) {
       if(this.numbersSelecteds.includes(number)) {
         const index = this.numbersSelecteds.indexOf(number)
-        return this.numbersSelecteds.splice(index, number)
+
+        return this.numbersSelecteds.splice(index, 1)
+        
       }
     },    
   }
