@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      numbersSelecteds: []
+      numbersSelecteds: [].sort((a,b) => a - b)
     }
   },
   computed: {
