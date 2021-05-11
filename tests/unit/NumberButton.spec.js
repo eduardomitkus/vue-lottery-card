@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import NumberButton from '@/components/NumberButton.vue'
+import NumberButton from '@/components/NumberButton'
 
 describe('NumberButton.vue', () => {
   let numberButtonWrapper

@@ -3,11 +3,11 @@
     <form>
       <div class="center row">
         <label class="sena-check">
-          <input name="type" type="radio" :value="games.sena.value" v-model="typeSelected" />
+          <input id="sena" name="type" type="radio" :value="games.sena.value" v-model="typeSelected" />
           <span>{{games.sena.label}}</span>
         </label>
         <label>
-          <input name="type" type="radio" :value="games.quina.value" v-model="typeSelected" />
+          <input id="quina" name="type" type="radio" :value="games.quina.value" v-model="typeSelected" />
           <span>{{ games.quina.label }}</span>
         </label>
       </div>
