@@ -7,9 +7,9 @@
             :number="number"
             :is-maximum-number-total="isMaximumNumberTotal"
           />
-        </div>        
+        </div>
       </div>
-      <selecteds-numbers-text :numbers-selecteds="numbersSelecteds.sort((a,b) => a - b)"/>
+      <selecteds-numbers-text :numbers-selecteds="getNumbersSelecteds()"/>
   </div>
 </template>
 
@@ -17,6 +17,7 @@
 import NumberButton from './NumberButton'
 import GamesTypes from '../types/Games'
 import SelectedsNumbersText from './SelectedsNumbersText'
+import Store from '../store/index'
 
 export default {
   name: 'GroupNumbers',
@@ -27,17 +28,12 @@ export default {
   props: {
     typeGame: String,
   },
-  data() {
-    return {
-      numbersSelecteds: []
-    }
-  },
   computed: {
     totalNumbers() {
       return this.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
     },
     isMaximumNumberTotal() {
-      return this.numbersSelecteds.length === 15
+      return Store.state.numbersSelecteds.length === 15
     }
   },
   methods: {
@@ -49,16 +45,18 @@ export default {
       return this.addNumber(number)
     },
     addNumber(number) {
-      this.numbersSelecteds.push(number)
+      Store.state.numbersSelecteds.push(number)
     },
     removeNumber(number) {
-      if(this.numbersSelecteds.includes(number)) {
-        const index = this.numbersSelecteds.indexOf(number)
+      if(Store.state.numbersSelecteds.includes(number)) {
+        const index = Store.state.numbersSelecteds.indexOf(number)
 
-        return this.numbersSelecteds.splice(index, 1)
-        
+        return Store.state.numbersSelecteds.splice(index, 1)        
       }
-    },    
-  }
+    },
+    getNumbersSelecteds() {
+      return Store.state.numbersSelecteds.sort((a,b) => a - b)
+    }
+  },
 }
 </script>
