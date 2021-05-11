@@ -17,7 +17,6 @@
 
 <script>
 import GamesTypes from '../types/Games'
-import Store from '../store/index'
 
 export default {
   name: 'SwitchGame',
@@ -29,7 +28,7 @@ export default {
   },
   watch: {
     typeSelected(value) {
-      Store.state.typeGame = value
+      this.$store.state.typeGame = value
     }
   },
   created() {

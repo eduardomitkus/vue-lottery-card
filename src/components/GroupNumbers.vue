@@ -17,7 +17,6 @@
 import NumberButton from './NumberButton'
 import GamesTypes from '../types/Games'
 import SelectedsNumbersText from './SelectedsNumbersText'
-import Store from '../store/index'
 
 export default {
   name: 'GroupNumbers',
@@ -27,10 +26,10 @@ export default {
   },
   computed: {
     totalNumbers() {
-      return Store.state.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
+      return this.$store.state.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
     },
     isMaximumNumberTotal() {
-      return Store.state.numbersSelecteds.length === 15
+      return this.$store.state.numbersSelecteds.length === 15
     }
   },
   methods: {
@@ -42,17 +41,17 @@ export default {
       return this.addNumber(number)
     },
     addNumber(number) {
-      Store.state.numbersSelecteds.push(number)
+      this.$store.state.numbersSelecteds.push(number)
     },
     removeNumber(number) {
-      if(Store.state.numbersSelecteds.includes(number)) {
-        const index = Store.state.numbersSelecteds.indexOf(number)
+      if(this.$store.state.numbersSelecteds.includes(number)) {
+        const index = this.$store.state.numbersSelecteds.indexOf(number)
 
-        return Store.state.numbersSelecteds.splice(index, 1)        
+        return this.$store.state.numbersSelecteds.splice(index, 1)        
       }
     },
     getNumbersSelecteds() {
-      return Store.state.numbersSelecteds.sort((a,b) => a - b)
+      return this.$store.state.numbersSelecteds.sort((a,b) => a - b)
     }
   },
 }
