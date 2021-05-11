@@ -9,7 +9,7 @@
           />
         </div>        
       </div>
-      <selecteds-numbers-text :numbers-selecteds="numbersSelecteds"/>
+      <selecteds-numbers-text :numbers-selecteds="numbersSelecteds.sort((a,b) => a - b)"/>
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      numbersSelecteds: [].sort((a,b) => a - b)
+      numbersSelecteds: []
     }
   },
   computed: {
