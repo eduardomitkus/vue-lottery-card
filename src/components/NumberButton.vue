@@ -42,4 +42,10 @@ export default {
   .row .col.s1 {
     width: 10%;
   }
+
+  @media screen and (max-width: 600px) {
+    .row .col.s1 {
+      width: 20%;
+    }
+  }
 </style>
