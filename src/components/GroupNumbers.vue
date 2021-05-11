@@ -5,6 +5,7 @@
           <number-button 
             @isSelected="(isSelected) => this.numberSelected(number, isSelected)" 
             :number="number"
+            :is-maximum-number-total="isMaximumNumberTotal"
           />
         </div>        
       </div>
@@ -34,6 +35,9 @@ export default {
   computed: {
     totalNumbers() {
       return this.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
+    },
+    isMaximumNumberTotal() {
+      return this.numbersSelecteds.length === 15
     }
   },
   methods: {

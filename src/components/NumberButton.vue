@@ -4,6 +4,7 @@
       <button class="left waves-effect waves-light btn size lighten-5 text-darken-2 number-button"
         :class="{ grey: !isSelected, 'grey-text': !isSelected }"
         @click="clickNumber"
+        :disabled="disabledButton()"
       >
         {{ number }}
       </button>
@@ -16,6 +17,7 @@ export default {
   name: 'NumberButton',
   props: {
     number: Number,
+    isMaximumNumberTotal: Boolean
   },
   data() {
     return {
@@ -26,6 +28,9 @@ export default {
     clickNumber() {
       this.isSelected = ! this.isSelected
       this.$emit('isSelected', this.isSelected)
+    },
+    disabledButton() {
+      return this.isMaximumNumberTotal && ! this.isSelected
     }
   }
 }
