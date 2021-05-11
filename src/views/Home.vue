@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <switch-game />
+    <switch-game @select="game" />
     <lottery-card>
       <group-numbers />
     </lottery-card>  
@@ -19,6 +19,11 @@ export default {
     LotteryCard,
     GroupNumbers,
     SwitchGame
+  },
+  methods: {
+    game(game) {
+      console.log(game)
+    }
   }
 }
 </script>

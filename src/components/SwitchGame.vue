@@ -3,12 +3,12 @@
     <form>
       <div class="center row">
         <label class="sena-check">
-          <input name="group1" type="radio" checked />
-          <span>Sena</span>
+          <input name="type" type="radio" :value="typesValues.sena.value" v-model="typeSelected" />
+          <span>{{ typesValues.sena.label }}</span>
         </label>
         <label>
-          <input name="group1" type="radio" />
-          <span>Quina</span>
+          <input name="type" type="radio" :value="typesValues.quina.value" v-model="typeSelected" />
+          <span>{{ typesValues.quina.label }}</span>
         </label>
       </div>
     </form>  
@@ -17,7 +17,24 @@
 
 <script>
 export default {
-  name: 'SwitchGame'
+  name: 'SwitchGame',
+  data() {
+    return {
+      typeSelected: '',
+      typesValues: {
+        sena: { value: 'sena', label: 'Sena'},
+        quina: { value: 'quina', label: 'Quina'},
+      }
+    }
+  },
+  watch: {
+    typeSelected(value) {
+      this.$emit('select', value)
+    }
+  },
+  created() {
+    this.typeSelected = this.typesValues.sena.value
+  }
 }
 </script>
 
