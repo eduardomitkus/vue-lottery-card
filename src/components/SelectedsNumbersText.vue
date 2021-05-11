@@ -1,8 +1,8 @@
 <template>
   <div class="center row grey-text text-darken-2">
     <div v-if="numbersSelecteds.length > 0">
-      <span>Voce jogou as seguintes dezenas: </span>
-      <span v-for="(numberSelected, key) in numbersSelecteds" :key="key">
+      <span class="text">Voce jogou as seguintes dezenas: </span>
+      <span class="text" v-for="(numberSelected, key) in numbersSelecteds" :key="key">
         {{ additionalCharacter(key)+numberSelected }}
       </span>
     </div>
@@ -26,3 +26,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  @media screen and (max-width: 600px) {
+    .text {
+      font-size: 12px;
+    }
+  }
+</style>
