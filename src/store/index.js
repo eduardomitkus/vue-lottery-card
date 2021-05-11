@@ -2,12 +2,10 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    numbersSelecteds: []
+    numbersSelecteds: [],
+    typeGame: ''
   },
-  mutations: {
+  getters: {
+
   },
-  actions: {
-  },
-  modules: {
-  }
 })

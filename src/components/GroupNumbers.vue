@@ -25,12 +25,9 @@ export default {
     NumberButton,
     SelectedsNumbersText
   },
-  props: {
-    typeGame: String,
-  },
   computed: {
     totalNumbers() {
-      return this.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
+      return Store.state.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
     },
     isMaximumNumberTotal() {
       return Store.state.numbersSelecteds.length === 15
