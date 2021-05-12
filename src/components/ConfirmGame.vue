@@ -4,7 +4,7 @@
       <h5>Valor do Jogo: {{ getPrice() }}</h5>
     </div>
     <div class="col s12">
-      <button class="btn waves-effect waves-light" type="submit" name="action">Confirmar Jogo</button>
+      <button id="confirm-game" class="btn waves-effect waves-light" type="submit" name="action">Confirmar Jogo</button>
     </div>
   </div>
 

@@ -6,7 +6,7 @@ describe('SwitchGame.vue', () => {
   let $store
 
   beforeEach(() => {
-    const $store = {
+    $store = {
       state: {
         numbersSelecteds: [],
         typeGame: ''
