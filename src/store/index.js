@@ -5,9 +5,4 @@ export default createStore({
     numbersSelecteds: [],
     typeGame: ''
   },
-  mutations: {
-    addNumbers(state, number) {
-      state.numbersSelecteds.push(number)
-    }
-  }
 })
