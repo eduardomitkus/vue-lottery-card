@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     totalNumbers() {
-      return this.$store.state.typeGame == GamesTypes.sena.value ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
+      return this.$store.getters.isSenaGame ? GamesTypes.sena.totalNumber : GamesTypes.quina.totalNumber
     },
     isMaximumNumberTotal() {
       return this.$store.state.numbersSelecteds.length === 15

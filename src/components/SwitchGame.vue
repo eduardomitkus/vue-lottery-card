@@ -35,6 +35,11 @@ export default {
     this.games = GamesTypes
     this.typeSelected = this.games.sena.value
   },
+  updated() {
+    if(this.$store.state.typeGame == this.games.sena.value) {
+      this.$store.state.numbersSelecteds = this.$store.getters.senaNumbersSelecteds
+    }
+  }
 }
 </script>
 
