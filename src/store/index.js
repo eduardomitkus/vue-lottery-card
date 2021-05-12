@@ -4,7 +4,8 @@ import GamesTypes from '../types/Games'
 export default createStore({
   state: {
     numbersSelecteds: [],
-    typeGame: ''
+    typeGame: '',
+    priceGame: ''
   },
   getters: {
     senaNumbersSelecteds: state => {

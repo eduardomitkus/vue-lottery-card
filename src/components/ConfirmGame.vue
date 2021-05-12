@@ -4,7 +4,9 @@
       <h5>Valor do Jogo: {{ getCurrency() }}</h5>
     </div>
     <div class="col s12">
-      <button id="confirm-game" class="btn waves-effect waves-light" type="submit" name="action">Confirmar Jogo</button>
+      <a href="#/pagamento">
+        <button @click="setStatePrice()" id="confirm-game" class="btn waves-effect waves-light" type="submit" name="action">Confirmar Jogo</button>
+      </a>
     </div>
   </div>
 
@@ -25,6 +27,9 @@ export default {
     },
     getCurrency() {
       return this.getPrice() ? Monetary(this.getPrice()) : ''
+    },
+    setStatePrice() {
+      this.$store.state.priceGame = this.getPrice()
     }
   },
   computed: {
