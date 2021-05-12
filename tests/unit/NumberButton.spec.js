@@ -8,18 +8,18 @@ describe('NumberButton.vue', () => {
     numberButtonWrapper = shallowMount(NumberButton)
   })
 
-  it('should come unselected by default', () => {
+  test('should come unselected by default', () => {
     expect(numberButtonWrapper.vm.isSelected).toBeFalsy()
   })
 
-  it('should select', () => {
+  test('should select', () => {
     let button = numberButtonWrapper.find('.number-button')
     button.trigger('click')
     
     expect(numberButtonWrapper.vm.isSelected).toBeTruthy()
   })
 
-  it('should unselect', () => {
+  test('should unselect', () => {
     let button = numberButtonWrapper.find('.number-button')
     button.trigger('click')
     button.trigger('click')

@@ -21,7 +21,7 @@ beforeEach(() => {
 })
 
 describe('PaymentDetail.vue', () => {
-    it('must show the formatted currency price', () => {
+    test('should show the formatted currency price', () => {
       paymentDetailWrapper.vm.$store.state.priceGame = 31.50
 
       expect(paymentDetailWrapper.vm.getCurrency()).toEqual('R$ 31,50')
