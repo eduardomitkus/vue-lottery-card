@@ -3,7 +3,8 @@
     <div class="col s1">
       <button class="left waves-effect waves-light btn size lighten-5 text-darken-2 number-button"
         :class="{ grey: !isSelected, 'grey-text': !isSelected }"
-        @click="isSelected = !isSelected"
+        @click="clickNumber"
+        :disabled="disabledButton()"
       >
         {{ number }}
       </button>
@@ -16,10 +17,20 @@ export default {
   name: 'NumberButton',
   props: {
     number: Number,
+    isMaximumNumberTotal: Boolean
   },
   data() {
     return {
       isSelected: false,
+    }
+  },
+  methods: {
+    clickNumber() {
+      this.isSelected = ! this.isSelected
+      this.$emit('isSelected', this.isSelected)
+    },
+    disabledButton() {
+      return this.isMaximumNumberTotal && ! this.isSelected
     }
   }
 }
@@ -35,5 +46,11 @@ export default {
   }
   .row .col.s1 {
     width: 10%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .row .col.s1 {
+      width: 20%;
+    }
   }
 </style>

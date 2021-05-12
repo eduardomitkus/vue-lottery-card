@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <switch-game @select="game" />
-    <lottery-card :type="typeGame" />
+    <switch-game />
+    <lottery-card/>
   </div>
 </template>
 
@@ -20,10 +20,5 @@ export default {
     LotteryCard,
     SwitchGame
   },
-  methods: {
-    game(game) {
-      this.typeGame = game
-    }
-  }
 }
 </script>

@@ -3,9 +3,23 @@ import SwitchGame from '@/components/SwitchGame'
 
 describe('SwitchGame.vue', () => {
   let switchGameWrapper
+  let $store
 
   beforeEach(() => {
-    switchGameWrapper = shallowMount(SwitchGame)
+    const $store = {
+      state: {
+        numbersSelecteds: [],
+        typeGame: ''
+      },
+    }
+
+    switchGameWrapper = shallowMount(SwitchGame, {
+      global: {
+        mocks: {
+          $store
+        }
+      }
+    })
   })
 
   it('should display a Sena type game by default', () => {
