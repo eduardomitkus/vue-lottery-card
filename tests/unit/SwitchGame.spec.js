@@ -25,16 +25,16 @@ beforeEach(() => {
 })
 
 describe('SwitchGame.vue', () => {
-  it('should display a Sena type game by default', () => {
+  test('should display a Sena type game by default', () => {
     expect(switchGameWrapper.vm.typeSelected).toEqual('sena')
   })
 
-  it('should switch to Quina game', () => {
+  test('should switch to Quina game', () => {
     switchGameWrapper.find('#quina').trigger('click')
     expect(switchGameWrapper.vm.typeSelected).toEqual('quina')
   })
 
-  it('should switch to Quina game after selecting Quina', () => {
+  test('should switch to Quina game after selecting Quina', () => {
     switchGameWrapper.find('#quina').trigger('click')
     switchGameWrapper.find('#sena').trigger('click')
     

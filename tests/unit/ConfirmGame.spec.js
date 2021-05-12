@@ -21,7 +21,7 @@ const confirmGameMock = (data) => {
 }
 
 describe('ConfirmGame.vue', () => {
-  it('should return the price of the Sena game if have at least 6 numbers selected', () => {
+  test('should return the price of the Sena game if have at least 6 numbers selected', () => {
     const confirmGameWrapper = confirmGameMock({
       numbersSelecteds: [2,3,4,5,6,7],
       typeGame: 'sena'
@@ -30,7 +30,7 @@ describe('ConfirmGame.vue', () => {
     expect(confirmGameWrapper.vm.getPrice()).toEqual(4.50)
   })
 
-  it('should return the price of the Quina game if have at least 6 numbers selected', () => {
+  test('should return the price of the Quina game if have at least 6 numbers selected', () => {
     const confirmGameWrapper = confirmGameMock({
       numbersSelecteds: [2,3,4,5,6],
       typeGame: 'quina'
@@ -39,7 +39,7 @@ describe('ConfirmGame.vue', () => {
     expect(confirmGameWrapper.vm.getPrice()).toEqual(2.00)
   })
 
-  it('should a button to confirm the game should appear', () => {
+  test('should a button to confirm the game should appear', () => {
     const confirmGameWrapper = confirmGameMock({
       numbersSelecteds: [10,3,4,5,6,80],
       typeGame: 'quina'
@@ -50,7 +50,7 @@ describe('ConfirmGame.vue', () => {
     expect(confirmButton.text()).toBe('Confirmar Jogo')
   })
 
-  it('should save price state by Sena Game', () => {
+  test('should save price state by Sena Game', () => {
     const confirmGameWrapper = confirmGameMock({
       numbersSelecteds: [10,3,4,5,6,80,2,23,60,30],
       typeGame: 'sena',
@@ -62,7 +62,7 @@ describe('ConfirmGame.vue', () => {
     expect(confirmGameWrapper.vm.$store.state.priceGame).toEqual(senPrice)
   })
 
-  it('should save price state by Quina Game', () => {
+  test('should save price state by Quina Game', () => {
     const confirmGameWrapper = confirmGameMock({
       numbersSelecteds: [10,3,4,5,6,80,2,23,60,30],
       typeGame: 'quina',
