@@ -28,7 +28,7 @@ export default {
   },
   watch: {
     typeSelected(value) {
-      this.$store.commit('setTypeGame', value)
+      this.$store.state.typeGame = value
     }
   },
   created() {
