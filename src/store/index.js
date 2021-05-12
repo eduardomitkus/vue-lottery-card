@@ -5,4 +5,9 @@ export default createStore({
     numbersSelecteds: [],
     typeGame: ''
   },
+  getters: {
+    senaNumbersSelecteds: state => {
+      return state.numbersSelecteds.filter(number => number <= 60)
+    }
+  }
 })
