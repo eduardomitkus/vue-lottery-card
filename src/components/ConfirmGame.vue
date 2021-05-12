@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Prices from '../types/Prices'
+import Prices from '../service/Prices'
 import Monetary from '../helper/Monetary'
 
 export default {
