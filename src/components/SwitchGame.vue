@@ -31,6 +31,9 @@ export default {
       this.$store.state.typeGame = value
     }
   },
+  mounted() {
+    this.$store.state.numbersSelecteds = []
+  },
   created() {
     this.games = GamesTypes
     this.typeSelected = this.games.sena.value
