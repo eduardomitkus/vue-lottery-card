@@ -1,4 +1,4 @@
-const typesValues = {
+export default {
   sena: { 
     value: 'sena', 
     label: 'Sena',
@@ -11,5 +11,3 @@ const typesValues = {
   }
 
 }
-
-export default typesValues
