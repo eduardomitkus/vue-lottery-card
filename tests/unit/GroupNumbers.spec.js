@@ -10,6 +10,9 @@ const groupNumbersMock = (data) => {
             numbersSelecteds: data.numbersSelecteds,
             typeGame: data.typeGame
           },
+          getters: {
+            isSenaGame: data.typeGame == 'sena'
+          }
         }
       }
     }

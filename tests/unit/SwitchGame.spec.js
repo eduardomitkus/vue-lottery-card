@@ -11,6 +11,9 @@ describe('SwitchGame.vue', () => {
         numbersSelecteds: [],
         typeGame: ''
       },
+      getters: {
+        senaNumbersSelecteds: []
+      }
     }
 
     switchGameWrapper = shallowMount(SwitchGame, {
