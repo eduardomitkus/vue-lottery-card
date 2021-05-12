@@ -1,30 +1,30 @@
 import { shallowMount } from '@vue/test-utils'
 import SwitchGame from '@/components/SwitchGame'
 
-describe('SwitchGame.vue', () => {
-  let switchGameWrapper
-  let $store
+let switchGameWrapper
+let $store
 
-  beforeEach(() => {
-    $store = {
-      state: {
-        numbersSelecteds: [],
-        typeGame: ''
-      },
-      getters: {
-        senaNumbersSelecteds: []
+beforeEach(() => {
+  $store = {
+    state: {
+      numbersSelecteds: [],
+      typeGame: ''
+    },
+    getters: {
+      senaNumbersSelecteds: []
+    }
+  }
+
+  switchGameWrapper = shallowMount(SwitchGame, {
+    global: {
+      mocks: {
+        $store
       }
     }
-
-    switchGameWrapper = shallowMount(SwitchGame, {
-      global: {
-        mocks: {
-          $store
-        }
-      }
-    })
   })
+})
 
+describe('SwitchGame.vue', () => {
   it('should display a Sena type game by default', () => {
     expect(switchGameWrapper.vm.typeSelected).toEqual('sena')
   })
