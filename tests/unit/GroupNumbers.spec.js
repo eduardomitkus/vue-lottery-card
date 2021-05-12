@@ -72,7 +72,6 @@ describe('NumberButton.vue', () => {
     groupNumbersWrapper.vm.numberSelected(numberSelected, isSelected)
 
     expect(groupNumbersWrapper.vm.$store.state.numbersSelecteds).toEqual([])
-
   })
 
 })
