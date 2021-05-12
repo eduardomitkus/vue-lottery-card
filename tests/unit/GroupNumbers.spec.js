@@ -20,7 +20,6 @@ const groupNumbersMock = (data) => {
 }
 
 describe('NumberButton.vue', () => {
-
   it('should return a Sena game with 60 numbers', () => {
     const groupNumbersWrapper = groupNumbersMock({
       numbersSelecteds: [],
@@ -40,7 +39,6 @@ describe('NumberButton.vue', () => {
   })
 
   it('Selected numbers should be in ascending order', () => {
-    
     const groupNumbersWrapper = groupNumbersMock({
       numbersSelecteds: [],
     })
@@ -74,7 +72,6 @@ describe('NumberButton.vue', () => {
     groupNumbersWrapper.vm.numberSelected(numberSelected, isSelected)
 
     expect(groupNumbersWrapper.vm.$store.state.numbersSelecteds).toEqual([])
-
   })
 
 })
